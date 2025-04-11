@@ -7,5 +7,10 @@ $(document).ready(function () {
         } else {
             console.log("未找到按鈕");
         }
-    }, 500); // 等待 2 秒確保頁面載入
+
+
+        let tix2 = $('.plus:first');
+        tix2.click();
+
+    }, 500);
 });

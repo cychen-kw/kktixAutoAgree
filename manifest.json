@@ -4,11 +4,16 @@
     "version": "1.1",
     "description": "自動點擊 KKTIX 條款同意按鈕",
     "permissions": ["tabs", "scripting"],
-    "host_permissions": ["https://kktix.com/events/*/registrations/new"],
+    "host_permissions": ["https://kktix.com/","https://orders.ibon.com.tw/"],
     "content_scripts": [
       {
         "matches": ["https://kktix.com/events/*/registrations/new"],
         "js": ["jquery.min.js", "content.js"],
+        "run_at": "document_idle"
+      },
+      {
+        "matches": ["https://orders.ibon.com.tw/application/*/*.aspx?*"],
+        "js": ["jquery.min.js", "ibon.js"],
         "run_at": "document_idle"
       }
     ]
